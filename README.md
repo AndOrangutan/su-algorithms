@@ -8,3 +8,4 @@ This is my attempt at implementing all the algorithms talked about in the Stanfo
 
 - Go - `go test -v` in desired directory to test
 - Java - `mvn test`
+- Python - `pytest`
