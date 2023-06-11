@@ -10,3 +10,12 @@ This is my attempt at implementing all the algorithms talked about in the Stanfo
 - Java - `mvn test`
 - Python - `pytest`
 - TypeScript - `jest/npm test`
+
+## Implemented
+
+- Intro
+    - Hello World (GJPT)
+- Sorting
+    - Bubble Sort (J)
+    - Selection Sort (J)
+    - Insertion Sort (J)
