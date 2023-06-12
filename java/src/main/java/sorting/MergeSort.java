@@ -30,7 +30,7 @@ public class MergeSort {
             else {
                 arr[k] = right[j];
                 j++;
-            }
+           }
             k++;
         }
  
