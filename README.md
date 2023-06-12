@@ -19,3 +19,4 @@ This is my attempt at implementing all the algorithms talked about in the Stanfo
     - Bubble Sort (J)
     - Selection Sort (J)
     - Insertion Sort (J)
+    - Merge Sort (J)
