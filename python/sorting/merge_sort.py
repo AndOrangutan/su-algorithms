@@ -29,7 +29,7 @@ def merge_sort(arr: list[int]):
 
         while j < len(right):
             arr[k] = right[j]
-            i += 1
+            j += 1
             k += 1
 
 

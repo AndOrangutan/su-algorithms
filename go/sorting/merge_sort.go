@@ -15,7 +15,7 @@ func merge(arr []int, l int, m int, r int) {
     }
 
     i, j := 0, 0;
-    k := 0
+    k := l;
 
     for i < sizeLeft && j < sizeRight {
         if left[i] <= right[j] {
