@@ -58,32 +58,31 @@ public class StrassenMatrixMult {
 
     public static float[][] mult(float[][] X,float[][] Y) {
         final int size = X.length;
-        final int splitpnt = size/2;
         float[][] mult = new float[size][size];
         // Base case
         if (size == 1) {
             mult[0][0] = X[0][0] * Y[0][0];
         } else {
-            float[][] A = new float[splitpnt][splitpnt];
-            float[][] B = new float[splitpnt][splitpnt];
-            float[][] C = new float[splitpnt][splitpnt];
-            float[][] D = new float[splitpnt][splitpnt];
-            float[][] E = new float[splitpnt][splitpnt];
-            float[][] F = new float[splitpnt][splitpnt];
-            float[][] G = new float[splitpnt][splitpnt];
-            float[][] H = new float[splitpnt][splitpnt];
+            float[][] A = new float[size/2][size/2];
+            float[][] B = new float[size/2][size/2];
+            float[][] C = new float[size/2][size/2];
+            float[][] D = new float[size/2][size/2];
+            float[][] E = new float[size/2][size/2];
+            float[][] F = new float[size/2][size/2];
+            float[][] G = new float[size/2][size/2];
+            float[][] H = new float[size/2][size/2];
 
             // O(n^2)
             split(X, A, 0, 0);
-            split(X, B, 0, splitpnt);
-            split(X, C, splitpnt, 0);
-            split(X, D, splitpnt, splitpnt);
+            split(X, B, 0, size/2);
+            split(X, C, size/2, 0);
+            split(X, D, size/2, size/2);
 
             // O(n^2)
             split(Y, E, 0, 0);
-            split(Y, F, 0, splitpnt);
-            split(Y, G, splitpnt, 0);
-            split(Y, H, splitpnt, splitpnt);
+            split(Y, F, 0, size/2);
+            split(Y, G, size/2, 0);
+            split(Y, H, size/2, size/2);
 
             float[][] P1 = mult(A, sub(F,H));
             float[][] P2 = mult(add(A,B), H);
@@ -99,9 +98,9 @@ public class StrassenMatrixMult {
             float[][] C4 = add(sub(P1, P3), sub(P5, P7));
 
             join(C1, mult, 0, 0);
-            join(C2, mult, 0, splitpnt);
-            join(C3, mult, splitpnt, 0);
-            join(C4, mult, splitpnt, splitpnt);
+            join(C2, mult, 0, size/2);
+            join(C3, mult, size/2, 0);
+            join(C4, mult, size/2, size/2);
 
             return mult;
         }
