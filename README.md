@@ -20,3 +20,5 @@ This is my attempt at implementing all the algorithms talked about in the Stanfo
     - Selection Sort (J)
     - Insertion Sort (J)
     - Merge Sort (GJPT)
+- Array
+    - Strassen Matrix Multiplication (J)
